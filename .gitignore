@@ -3,4 +3,6 @@
 *.iws
 *.project
 *.settings
+*.classpath
 **/target
+.idea
