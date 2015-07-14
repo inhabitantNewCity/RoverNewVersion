@@ -2,14 +2,44 @@ package niit.summer.complex;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class ComplexNumberTest {
 
     @Test
     public void testDummy() {
         assertTrue("The truth is out there", false);
+    }
+
+    @Test
+    public void testEqualsReturnsFalseOnDifferentTypes() {
+        ComplexNumber z = new ComplexNumber(1, 0);
+        Object o = new Object();
+
+        assertFalse(z.equals(o));
+    }
+
+    @Test
+    public void testEqualsReturnsTrueOnSameObject() {
+        ComplexNumber z = new ComplexNumber(1, 0);
+
+        assertTrue(z.equals(z));
+    }
+
+    @Test
+    public void testHashCodeReturnsSameValueOnEqualObjects() {
+        ComplexNumber z1 = new ComplexNumber(1.0, 2.0);
+        ComplexNumber z2 = new ComplexNumber(1.0, 2.0);
+
+        assertEquals(z1.hashCode(), z2.hashCode());
+    }
+
+    @Test
+    public void testHashCodeReturnsDifferentValueOnInequalObjects() {
+        ComplexNumber z1 = new ComplexNumber(1.0, 2.0);
+        ComplexNumber z2 = new ComplexNumber(1.0, 1.0);
+
+        assertNotEquals(z1.hashCode(), z2.hashCode());
     }
 
     @Test
