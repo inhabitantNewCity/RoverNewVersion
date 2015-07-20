@@ -69,7 +69,7 @@ public class RoverCommandParserTest extends AbstractRoverTest {
         testedInstance = new RoverCommandParser(rover, file);
         RoverCommand[] expectedCommands = new RoverCommand[]{new MoveCommand(rover), new MoveCommand(rover),
                 new TurnCommand(rover, Direction.EAST), new MoveCommand(rover), new MoveCommand(rover),
-                new LiftCommand(rover), new LandCommand(rover, new Point(0, 2), Direction.WEST),
+                new LiftCommand(rover), new LandCommand(rover, new Point(2, 0), Direction.WEST),
                 new MoveCommand(rover)
         };
 
