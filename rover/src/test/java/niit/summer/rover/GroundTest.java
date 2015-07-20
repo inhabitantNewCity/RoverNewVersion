@@ -9,7 +9,7 @@ public class GroundTest extends AbstractRoverTest {
 
     @Test
     public void testInitializeSquareGround() throws OutOfGroundException {
-        assertSquareGround(SQUARE_GROUND);
+        assertSquareGround(GROUND_2x2);
     }
 
     @Test
@@ -37,21 +37,21 @@ public class GroundTest extends AbstractRoverTest {
 
     @Test(expected = OutOfGroundException.class)
     public void testGetCellThrowsExceptionOnExcessiveWidth() throws Exception {
-        SQUARE_GROUND.getCell(5, 1);
+        GROUND_2x2.getCell(5, 1);
     }
 
     @Test(expected = OutOfGroundException.class)
     public void testGetCellThrowsExceptionOnExcessiveLength() throws Exception {
-        SQUARE_GROUND.getCell(1, 5);
+        GROUND_2x2.getCell(1, 5);
     }
 
     @Test(expected = OutOfGroundException.class)
     public void testGetCellThrowsExceptionOnNegativeX() throws Exception {
-        SQUARE_GROUND.getCell(-5, 1);
+        GROUND_2x2.getCell(-5, 1);
     }
 
     @Test(expected = OutOfGroundException.class)
     public void testGetCellThrowsExceptionOnNegativeY() throws Exception {
-        SQUARE_GROUND.getCell(1, -5);
+        GROUND_2x2.getCell(1, -5);
     }
 }

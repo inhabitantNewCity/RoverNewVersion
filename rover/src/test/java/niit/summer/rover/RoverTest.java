@@ -3,19 +3,11 @@ package niit.summer.rover;
 import niit.summer.rover.constants.Direction;
 import org.junit.Test;
 
-import static niit.summer.rover.constants.CellState.FREE;
-import static niit.summer.rover.constants.CellState.OCCUPIED;
 import static org.junit.Assert.*;
 
 public class RoverTest extends AbstractRoverTest {
 
-    private Ground testGround = new Ground(3,3){{
-       initialize(new GroundCell(FREE), new GroundCell(FREE), new GroundCell(FREE),
-               new GroundCell(FREE), new GroundCell(OCCUPIED), new GroundCell(FREE),
-               new GroundCell(FREE), new GroundCell(FREE), new GroundCell(FREE));
-    }};
-
-    private Rover testedInstance = new Rover(new GroundVisor(testGround));
+    private Rover testedInstance = new Rover(new GroundVisor(GROUND_3x3));
 
     @Test
     public void testMoveToTheRightFreeCell() {

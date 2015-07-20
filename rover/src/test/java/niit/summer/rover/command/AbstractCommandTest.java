@@ -18,7 +18,7 @@ public abstract class AbstractCommandTest extends AbstractRoverTest {
 
     @Before
     public void setUp(){
-        rover = new Rover(new GroundVisor(SQUARE_GROUND));
+        rover = new Rover(new GroundVisor(GROUND_2x2));
         MockitoAnnotations.initMocks(this);
     }
 

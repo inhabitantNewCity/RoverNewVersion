@@ -14,12 +14,16 @@ public abstract class AbstractRoverTest {
      * |0,0|
      * |1,1|
      */
-    protected static final Ground SQUARE_GROUND = new Ground(2, 2);
-
-    static {
-        SQUARE_GROUND.initialize(new GroundCell(FREE), new GroundCell(FREE),
+    protected static final Ground GROUND_2x2 = new Ground(2, 2){{
+        initialize(new GroundCell(FREE), new GroundCell(FREE),
                 new GroundCell(OCCUPIED), new GroundCell(OCCUPIED));
-    }
+    }};
+
+    protected static final Ground GROUND_3x3 = new Ground(3, 3){{
+        initialize(new GroundCell(FREE), new GroundCell(FREE), new GroundCell(FREE),
+                new GroundCell(FREE), new GroundCell(OCCUPIED), new GroundCell(FREE),
+                new GroundCell(FREE), new GroundCell(FREE), new GroundCell(FREE));
+    }};
 
     protected void assertSquareGround(Ground ground) throws OutOfGroundException {
         assertTrue("Cell (0,0) must be free", FREE.equals(ground.getCell(0, 0).getState()));
