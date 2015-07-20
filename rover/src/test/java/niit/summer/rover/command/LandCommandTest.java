@@ -5,6 +5,7 @@ import niit.summer.rover.constants.Direction;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -26,4 +27,12 @@ public class LandCommandTest extends AbstractCommandTest {
 
         verify(rover, times(1)).land(eq(POSITION), eq(DIRECTION));
     }
+
+    @Test
+    public void testToString() {
+        String expected = "Land at (2, 2) heading EAST";
+
+        assertEquals(expected, testedInstance.toString());
+    }
+
 }
