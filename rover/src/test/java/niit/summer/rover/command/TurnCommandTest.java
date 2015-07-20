@@ -18,6 +18,11 @@ public class TurnCommandTest extends AbstractCommandTest {
         testedInstance = new TurnCommand(rover, direction);
     }
 
+    @Override
+    protected String expectedToString() {
+        return "Heading EAST";
+    }
+
     @Test
     public void testExecute() throws Exception {
         testedInstance.execute();

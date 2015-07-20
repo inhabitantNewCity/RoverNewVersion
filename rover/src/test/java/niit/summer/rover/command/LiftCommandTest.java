@@ -16,6 +16,11 @@ public class LiftCommandTest extends AbstractCommandTest {
         testedInstance = new LiftCommand(rover);
     }
 
+    @Override
+    protected String expectedToString() {
+        return "Rover lifted";
+    }
+
     @Test
     public void testLift() {
         testedInstance.execute();

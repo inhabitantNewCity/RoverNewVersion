@@ -21,18 +21,16 @@ public class LandCommandTest extends AbstractCommandTest {
         testedInstance = new LandCommand(rover, POSITION, DIRECTION);
     }
 
+    @Override
+    protected String expectedToString() {
+        return "Land at (2, 2) heading EAST";
+    }
+
     @Test
     public void testExecute() {
         testedInstance.execute();
 
         verify(rover, times(1)).land(eq(POSITION), eq(DIRECTION));
-    }
-
-    @Test
-    public void testToString() {
-        String expected = "Land at (2, 2) heading EAST";
-
-        assertEquals(expected, testedInstance.toString());
     }
 
 }

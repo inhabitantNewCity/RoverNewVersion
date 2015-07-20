@@ -16,6 +16,11 @@ public class MoveCommandTest extends AbstractCommandTest {
         testedInstance = new MoveCommand(rover);
     }
 
+    @Override
+    protected String expectedToString() {
+        return "Rover moved";
+    }
+
     @Test
     public void testExecute() throws Exception {
         testedInstance.execute();
