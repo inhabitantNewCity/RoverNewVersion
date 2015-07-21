@@ -46,3 +46,4 @@
 * Для создания ```BufferedReader``` используйте ```new BufferedReader(new FileReader([путь до файла]))```
 * Получить путь до файла из запущенного приложения можно с помощью ```this.getClass().getResource(path).getFile()```
 * После того, как вы закончили читать из файла, не забывайте закрывать его ```BufferedReader#close()```
+* Для журналирования используйте метод ```Logger#debug```
