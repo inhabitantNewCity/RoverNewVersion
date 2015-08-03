@@ -14,5 +14,13 @@
     <artifactId>rover-server</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.github.stefanbirkner</groupId>
+            <artifactId>system-rules</artifactId>
+            <version>1.12.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     
 </project>
