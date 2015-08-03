@@ -11,6 +11,7 @@
     <modules>
         <module>complex</module>
         <module>rover</module>
+        <module>rover-app</module>
     </modules>
 
     <properties>
