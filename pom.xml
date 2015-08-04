@@ -11,7 +11,8 @@
     <modules>
         <module>complex</module>
         <module>rover</module>
-        <module>rover-app</module>
+        <module>rover-bus</module>
+        <module>messaging</module>
     </modules>
 
     <properties>
