@@ -7,4 +7,6 @@ public interface MessageBus {
     Message take() throws InterruptedException;
 
     int queueSize();
+
+    int getTransferred();
 }
