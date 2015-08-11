@@ -12,6 +12,7 @@
         <module>complex</module>
         <module>rover</module>
         <module>messaging</module>
+        <module>string-calculator</module>
     </modules>
 
     <properties>
