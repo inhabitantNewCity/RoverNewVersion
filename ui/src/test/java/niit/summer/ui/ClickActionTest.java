@@ -42,6 +42,11 @@ public class ClickActionTest {
         testedInstance = new ClickAction(panel, buttons, controller);
     }
 
+    @Test
+    public void testClickActionIsSubclassOfAbstractAction() {
+        assertTrue(testedInstance instanceof AbstractAction);
+    }
+
 
     @Test
     public void testActionPerformedCallsGameController() {
