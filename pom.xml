@@ -13,6 +13,7 @@
         <module>rover</module>
         <module>messaging</module>
         <module>string-calculator</module>
+        <module>ui</module>
     </modules>
 
     <properties>
