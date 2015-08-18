@@ -1,14 +1,13 @@
 package niit.summer.ui;
 
-import oracle.jrockit.jfr.JFR;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.*;
+import org.mockito.InjectMocks;
+import org.mockito.MockitoAnnotations;
+import org.mockito.Spy;
 
 import javax.swing.*;
-
 import java.awt.*;
-import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 import static org.mockito.Matchers.eq;
@@ -46,7 +45,7 @@ public class UIFormTest {
     public void testInitUICallsImageProcessor() {
         testedInstance.initUI();
 
-        verify(processor).cutImage(eq(UIForm.class.getResource("duke.png").getFile()), eq(UIForm.ROWS), eq(UIForm.COLS));
+        verify(processor).cutImage(eq(UIForm.class.getClassLoader().getResource("niit/summer/ui/duke.png")), eq(UIForm.ROWS), eq(UIForm.COLS));
     }
 
     @Test
