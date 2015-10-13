@@ -1,1 +1,1 @@
-"Tasks repository for NIIT summer java courses" 
+"Tasks repository for NC intensive java courses"
