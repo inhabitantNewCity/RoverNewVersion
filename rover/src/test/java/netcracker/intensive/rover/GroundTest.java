@@ -18,8 +18,8 @@ public class GroundTest extends AbstractRoverTest {
 
         ground.initialize(
                 new GroundCell(FREE), new GroundCell(FREE),
-                new GroundCell(OCCUPIED), new GroundCell(OCCUPIED),
-                new GroundCell(FREE)
+                new GroundCell(OCCUPIED), new GroundCell(OCCUPIED)//,
+              //  new GroundCell(FREE)
         );
 
         assertSquareGround(ground);
