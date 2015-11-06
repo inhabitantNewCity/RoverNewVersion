@@ -8,6 +8,9 @@ public class GroundVisorTest extends AbstractRoverTest {
 
     private GroundVisor testedInstance = new GroundVisor(GROUND_2x2);
 
+    public GroundVisorTest() {
+    }
+
     @Test
     public void testHasObstaclesReturnsTrueOnOccupiedCell() throws OutOfGroundException {
         assertTrue("Cell (0,1) must be occupied", testedInstance.hasObstacles(new Point(0, 1)));

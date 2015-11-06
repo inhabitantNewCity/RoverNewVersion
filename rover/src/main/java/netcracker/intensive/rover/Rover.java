@@ -32,15 +32,16 @@ import java.util.HashMap;
         @Override
         public void land(Point point, Direction direction) {
             try {
-                boolean check = view.checkCell(point);
-                if (check) {
+                boolean check = view.hasObstacles(point);
+                if (!check) {
                     location = point;
                     flight = false;
+                    this.direction = direction;
                     System.out.println("I go to x = " + location.getX()+ " y = " + location.getY());
-                    if(map.containsKey("status")){
-                        SimpleRoverStatsModule status = (SimpleRoverStatsModule) map.get("status");
-                        status.registerPosition(location);
-                    }
+                   // if(map.containsKey("status")){
+                     //   SimpleRoverStatsModule status = (SimpleRoverStatsModule) map.get("status");
+                       // status.registerPosition(location);
+                    //}
                 }
                 else lift();
             }
@@ -55,11 +56,15 @@ import java.util.HashMap;
         public void lift() {
             if(!flight)
                 flight = true;
+            location = null;
+            direction = null;
             System.out.println("I fly");
         }
 
         @Override
         public void move() {
+            if((location == null) || (direction == null))
+                return;
             try {
                 switch (direction) {
                     case SOUTH:
@@ -75,6 +80,8 @@ import java.util.HashMap;
                         moveEast();
                         break;
                 }
+               // this.direction = Direction.SOUTH;
+                //this.location = new Point(0,0);
             }catch (OutOfGroundException e){
                 lift();
                 e.printStackTrace();
@@ -84,52 +91,60 @@ import java.util.HashMap;
 
 
         private void moveSought() throws OutOfGroundException{
-            if(view.checkCell(new Point(location.getX(), (location.getY() + 1)))) {
+            if(location == null)
+                return;
+            if(!view.hasObstacles(new Point(location.getX(), (location.getY() + 1)))) {
                 location.setY(location.getY() + 1);
                 System.out.println("I go to " + location);
-                if(map.containsKey("status")){
-                    SimpleRoverStatsModule status = (SimpleRoverStatsModule) map.get("status");
-                    status.registerPosition(location);
-                }
+                //if(map.containsKey("status")){
+                  //  SimpleRoverStatsModule status = (SimpleRoverStatsModule) map.get("status");
+                    //status.registerPosition(location);
+                //}
             }
-            else lift();
+            //else lift();
         }
 
 
         private void moveNorth() throws OutOfGroundException{
-            if(view.checkCell(new Point(location.getX(), (location.getY() - 1)))) {
-                location.setY(location.getY() + 1);
+            if(location == null)
+                return;
+            if(!view.hasObstacles(new Point(location.getX(), (location.getY() - 1)))) {
+                location.setY(location.getY() - 1);
                 System.out.println("I go to " + location);
-                if(map.containsKey("status")){
-                    SimpleRoverStatsModule status = (SimpleRoverStatsModule) map.get("status");
-                    status.registerPosition(location);
-                }
+                //if(map.containsKey("status")){
+                   // SimpleRoverStatsModule status = (SimpleRoverStatsModule) map.get("status");
+                 //   status.registerPosition(location);
+               // }
             }
-            else lift();
+            //else lift();
         }
 
         private void moveWest() throws OutOfGroundException{
-            if(view.checkCell(new Point((location.getX() - 1), location.getY()))) {
-                location.setY(location.getY() + 1);
+            if(location == null)
+                return;
+            if(!view.hasObstacles(new Point((location.getX() - 1), location.getY()))) {
+                location.setX(location.getX() - 1);
                 System.out.println("I go to " + location);
-                if(map.containsKey("status")){
-                    SimpleRoverStatsModule status = (SimpleRoverStatsModule) map.get("status");
-                    status.registerPosition(location);
-                }
+               // if(map.containsKey("status")){
+                 //   SimpleRoverStatsModule status = (SimpleRoverStatsModule) map.get("status");
+                   // status.registerPosition(location);
+                //}
             }
-            else lift();
+
         }
 
-        private void moveEast() throws OutOfGroundException{
-            if(view.checkCell(new Point((location.getX() + 1), location.getY() + 1))) {
-                location.setY(location.getY() + 1);
+        private void moveEast() throws OutOfGroundException {
+            if(location == null)
+                return;
+            if (!view.hasObstacles(new Point((location.getX() + 1), location.getY()))) {
+                location.setX(location.getX() + 1);
                 System.out.println("I go to " + location);
-                if(map.containsKey("status")){
-                    SimpleRoverStatsModule status = (SimpleRoverStatsModule) map.get("status");
-                    status.registerPosition(location);
-                }
+               // if(map.containsKey("status")){
+                 //   SimpleRoverStatsModule status = (SimpleRoverStatsModule) map.get("status");
+                   // status.registerPosition(location);
+                //}
             }
-            else lift();
+            //else lift();
         }
 
         @Override

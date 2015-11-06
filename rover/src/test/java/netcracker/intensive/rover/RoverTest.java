@@ -19,8 +19,8 @@ public class RoverTest extends AbstractRoverTest {
 
     @Test
     public void testMoveDownwardsToFreeCell() {
-        testedInstance.move();
 
+        testedInstance.move();
         assertEquals(new Point(0, 1), testedInstance.getCurrentPosition());
     }
 

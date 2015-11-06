@@ -18,8 +18,14 @@ public class GroundVisor {
         return false;
     }
 
-    public boolean hasObstacles(Point point) {
-        return false;
+    public boolean hasObstacles(Point point) throws OutOfGroundException {
+        GroundCell tmp = ground.getCell(point.getX(),point.getY());
+       // if (tmp.getPoint().getX() == -1)
+         //   throw new OutOfGroundException();
+        if (tmp.getState() == CellState.FREE)
+            return false;
+        return true;
+        //return false;
     }
 }
 
