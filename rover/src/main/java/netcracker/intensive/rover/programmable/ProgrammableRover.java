@@ -8,9 +8,7 @@ import netcracker.intensive.rover.stats.SimpleRoverStatsModule;
 
 import javax.swing.*;
 import javax.swing.text.StringContent;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Этот класс должен уметь все то, что умеет обычный Rover, но при этом он еще должен уметь выполнять программы,
@@ -18,7 +16,7 @@ import java.util.Objects;
  */
 public class ProgrammableRover extends Rover{
 
-    private  HashMap<String, Objects> sitting;
+    private  HashMap<String, Object> sitting;
     private boolean status = false;
     SimpleRoverStatsModule simpleRoverStatsModule;
 
@@ -47,8 +45,8 @@ public class ProgrammableRover extends Rover{
       //  return currentPosition;
     //}
 
-    public HashMap<String, Object> getSettings() {
-        return (HashMap)sitting;
+    public Map<String, Object> getSettings() {
+        return Collections.unmodifiableMap(sitting);
     }
 
    // public void setSettings(UIManager settings) {
