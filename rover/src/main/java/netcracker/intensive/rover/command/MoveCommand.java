@@ -12,6 +12,7 @@ public class MoveCommand implements RoverCommand {
 
     public MoveCommand(Rover rover) {
         this.rover = rover;
+        //rover.e
     }
 
     @Override
@@ -22,5 +23,13 @@ public class MoveCommand implements RoverCommand {
      //   if(programmableRover  != null){
        //     programmableRover.move();
         //}
+    }
+    public String toString(){
+        return "Rover moved";
+    }
+    public boolean equals(Object ob){
+        if(ob.getClass().getName() == "netcracker.intensive.rover.command.MoveCommand")
+            return true;
+        return false;
     }
 }

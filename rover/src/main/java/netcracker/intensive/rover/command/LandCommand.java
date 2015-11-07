@@ -18,6 +18,12 @@ public class LandCommand implements RoverCommand {
         this.rover = rover;
     }
 
+    public boolean equals(Object ob){
+        if(ob.getClass().getName() == "netcracker.intensive.rover.command.LandCommand")
+            return true;
+        return false;
+    }
+
     public LandCommand(Rover rover, Point position, Direction direction) {
         this.direction = direction;
         this.point = position;
@@ -29,9 +35,13 @@ public class LandCommand implements RoverCommand {
     public void execute() {
         if(rover != null){
             rover.land(point,direction);
+            System.out.println("");
         }
        // if(programmableRover  != null){
          //   programmableRover.land(point,direction);
         //}
+    }
+    public String toString(){
+        return "Land at ("+ point.getX()+", "+point.getY() +") heading " + direction.toString();
     }
 }

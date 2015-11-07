@@ -15,4 +15,9 @@ public class LoggingCommand implements RoverCommand {
     public void execute() {
 
     }
+    public boolean equals(Object ob){
+        if(ob.getClass().getName() == "netcracker.intensive.rover.command.LoggingCommand")
+            return true;
+        return false;
+    }
 }

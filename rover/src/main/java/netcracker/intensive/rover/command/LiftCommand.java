@@ -15,6 +15,14 @@ public class LiftCommand implements RoverCommand {
         this.rover = rover;
     }
 
+    public boolean equals(Object ob){
+        if(ob.getClass().getName() == "netcracker.intensive.rover.command.LiftCommand")
+            return true;
+        return false;
+    }
+    public String toString(){
+        return "Rover lifted";
+    }
     @Override
     public void execute() {
         if(rover != null){

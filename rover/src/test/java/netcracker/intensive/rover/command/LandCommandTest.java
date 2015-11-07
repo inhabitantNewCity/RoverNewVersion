@@ -12,7 +12,7 @@ import static org.mockito.Mockito.verify;
 
 public class LandCommandTest extends AbstractCommandTest {
 
-    private final static Point POSITION = new Point(2, 2);
+    private final static Point POSITION = new Point(1, 1);
     private final static Direction DIRECTION = Direction.EAST;
 
     @Before
@@ -22,8 +22,8 @@ public class LandCommandTest extends AbstractCommandTest {
     }
 
     @Override
-    protected String expectedToString() {
-        return "Land at (2, 2) heading EAST";
+    protected String expectedToString( ){
+        return "Land at (1, 1) heading EAST";
     }
 
     @Test

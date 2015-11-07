@@ -50,9 +50,7 @@ public class ProgrammableRoverTest extends AbstractRoverTest {
     @Test(expected = UnsupportedOperationException.class)
     public void testGetSettingsReturnsImmutableObject() {
         String file = "program_with_log.txt";
-
         testedInstance.executeProgramFile(file);
-
         testedInstance.getSettings().put("test", "value");
     }
 }

@@ -75,7 +75,7 @@ public class RoverCommandParserTest extends AbstractRoverTest {
 
         RoverProgram program = testedInstance.getProgram();
         Collection<RoverCommand> commands = program.getCommands();
-
+        //RoverCommand[] expectedCommand = (RoverCommand[]) commands.toArray();
         assertArrayEquals(expectedCommands, commands.toArray());
     }
 

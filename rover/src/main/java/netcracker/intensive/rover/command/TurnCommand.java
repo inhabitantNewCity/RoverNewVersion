@@ -19,6 +19,14 @@ public class TurnCommand implements RoverCommand {
         this.direction = direction;
     }
 
+    public boolean equals(Object ob){
+        if(ob.getClass().getName() == "netcracker.intensive.rover.command.TurnCommand")
+            return true;
+        return false;
+    }
+    public String toString(){
+        return "Heading " + direction.toString();
+    }
     @Override
     public void execute() {
         if(rover != null){
